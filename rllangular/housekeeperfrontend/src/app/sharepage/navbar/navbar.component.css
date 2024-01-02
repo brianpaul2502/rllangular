@@ -1,0 +1,20 @@
+.navbar-custom .nav-link
+{
+    color:white;
+}
+.navbar-custom .nav-link.active-link
+{
+    color: white;
+    text-decoration: underline;
+}
+.navbar-custom .nav-link.active-link:hover {
+    color: black;
+}
+
+.navbar-custom {
+    background-color: #B1C381
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #fff;
+}

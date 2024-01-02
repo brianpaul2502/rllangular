@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.w-50 {
+  width: 600% !important;
+  position: absolute !important;
+  top: 120px !important;
+  border: 2px solid cadetblue !important;
+  border-radius: 10px !important;
+  left: 15%;
+}
+body {
+  background-image: url(/assets/img/b1.jpg);
+  height: 100vh !important;
+  max-width: 100% !important;
+  width: 100 !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}

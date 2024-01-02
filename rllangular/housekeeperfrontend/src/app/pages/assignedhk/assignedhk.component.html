@@ -1,0 +1,33 @@
+<body>
+  <div class="container">
+    <ul class="nav nav-tabs" id="myTabs">
+      <li class="nav-item">
+        <a class="nav-link " id="profile" data-toggle="tab" href="userprofile">Student Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="request" href="request">Request Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" id="assignedhk" href="assignedhk">Assigned Housekeeper</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="housekeeper" data-toggle="tab" href="hkdetails">Housekeeper details</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="feedback" href="feedback">Service Feedback</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="logout" href="">Logout</a>
+      </li>
+    </ul>
+    <div class="container my-2 w-50 text-dark bg-info p-2">
+      <h1>Assigned Housekeeper</h1>
+      <div class="card" *ngFor="let item of data">
+        <h3 class="my-1">Student: {{ item.name }} of Room Number: {{ item.roomno }} has been assigned to</h3>
+        <p class="my-1">Housekeeper: {{ item.housekeeper }}</p>
+      </div>
+    </div>
+  </div>
+</body>

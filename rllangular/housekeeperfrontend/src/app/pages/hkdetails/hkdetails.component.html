@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Job Posting Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <ul class="nav nav-tabs" id="myTabs">
+      <li class="nav-item">
+        <a class="nav-link " id="profile" data-toggle="tab" href="userprofile">Student Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="request" href="request">Request Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="assignedhk" href="assignedhk">Assigned Housekeeper</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" id="housekeeper" data-toggle="tab" href="hkdetails">Housekeeper details</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="feedback" href="feedback">Service Feedback</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="logout" href="">Logout</a>
+      </li>
+    </ul>
+
+
+    <div class="tab-content">
+
+      <div class="tab-pane fade show active" id="apply">
+        <div class="search-bar my-2 ">
+          <input type="text" placeholder="Search by Hostel" [(ngModel)]="searchQuery">
+        </div>
+        <button class="btn btn-outline-success me-2" (click)="filterDetails()">Search</button>
+        <button class="btn btn-outline-success me-2" (click)="sortDetails()">Sort by Availability</button>
+
+        <div class="job-card-container">
+          <h1>HouseKeeper Details</h1>
+          <div class="job-cards" *ngFor="let hk of hkData">
+            <div class="job-card">
+              <h4>
+                <p><strong>Name:</strong> {{ hk.name }}</p>
+              </h4>
+              <p><strong>Hostel:</strong> {{ hk.hostel }}</p>
+              <p><strong>Floor:</strong> {{ hk.floor }}</p>
+              <p><strong>Rooms:</strong> {{ hk.rooms }}</p>
+              <p><strong>Complaints:</strong> {{ hk.complaints }}</p>
+              <p><strong>time:</strong> {{ hk.time }}</p>
+              <p><strong>Available:</strong> {{ hk.available }}</p>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</body>
+
+</html>

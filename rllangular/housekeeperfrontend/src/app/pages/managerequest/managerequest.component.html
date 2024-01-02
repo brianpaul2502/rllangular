@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Housekeeper</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+
+
+    .nav-tabs {
+        background-color: #efa608;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .nav-link {
+        color: #fff;
+    }
+
+    h1 {
+        color: #343a40;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .table {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .bg-success {
+        background-color: #584242;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    button {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTabs">
+            <li class="nav-item">
+                <a class="nav-link " id="posthkdetails" data-toggle="tab" href="posthkdetails">Add Housekeeper</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " id="managehkdetails" data-toggle="tab" href="managehkdetails">Housekeeper
+                    Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="managerequest" href="managerequest">Requests</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="assignhktouser" href="assignhktouser">Assign Housekeeper</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="managefeedback" href="managefeedback">Feedback</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="logoutTab" href="">Logout</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container my-2 w-50 text-dark p-2">
+        <h1 class="align-items-center">REQUEST FOR HOUSEKEEPER SERVICE</h1>
+        <table mat-table [dataSource]="dataSource">
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let data"> {{ data.name }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let data"> {{ data.email }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="number">
+                <th mat-header-cell *matHeaderCellDef>Phone Number</th>
+                <td mat-cell *matCellDef="let data"> {{ data.number }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="roomnumber">
+                <th mat-header-cell *matHeaderCellDef>Room Number</th>
+                <td mat-cell *matCellDef="let data"> {{ data.roomnumber }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="delete">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let data">
+                    <button mat-button (click)="deleteData(data._id)">Close Request</button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

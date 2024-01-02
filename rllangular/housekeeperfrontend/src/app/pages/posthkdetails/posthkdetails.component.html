@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Housekeeper</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTabs">
+            <li class="nav-item">
+                <a class="nav-link active" id="posthkdetails" data-toggle="tab" href="posthkdetails">Add Housekeeper</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="managehkdetails" data-toggle="tab" href="managehkdetails">Housekeeper
+                    Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="managerequest" href="managerequest">Requests</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="assignhktouser" href="assignhktouser">Assign Housekeeper</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="managefeedback" href="managefeedback">Feedback</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="logoutTab" href="">Logout</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="postJobSection">
+                <div class="container">
+                    <div class="form" style="height: 80vh; overflow-y: auto;">
+                        <h2>Enter Housekeeper Details</h2>
+
+                        <section class="container my-2 w-50 text-dark bg-warning p-2">
+                            <form #jobForm="ngForm" (ngSubmit)="submitHk(hkData)">
+                                <div class="form-group">
+                                    <label for="Name">Name:</label>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        placeholder="Enter your name" required [(ngModel)]="hkData.name"
+                                        #name="ngModel">
+                                </div>
+                                <div class="form-group">
+                                    <label for="hostel">Hostel Name:</label>
+                                    <input type="text" class="form-control" id="hostel" name="hostel"
+                                        placeholder="Enter company name" required [(ngModel)]="hkData.hostel"
+                                        #hostel="ngModel">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="floor">Floor:</label>
+                                        <input type="text" class="form-control" id="floor" name="floor"
+                                            placeholder="Enter floor" required [(ngModel)]="hkData.floor"
+                                            #floor="ngModel">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="rooms">Rooms:</label>
+                                        <input type="text" class="form-control" id="rooms" name="rooms"
+                                            placeholder="Enter rooms" required [(ngModel)]="hkData.rooms"
+                                            #rooms="ngModel">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="complaints">Complaints:</label>
+                                        <input type="text" class="form-control" id="complaints" name="complaints"
+                                            placeholder="Enter the no of Complaints" required
+                                            [(ngModel)]="hkData.complaints" #complaints="ngModel">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="time">Time:</label>
+                                        <input type="text" class="form-control" id="time" name="time"
+                                            placeholder="Enter the Time" required [(ngModel)]="hkData.time"
+                                            #time="ngModel">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="available">Available:</label>
+                                        <input type="text" class="form-control" id="available" name="available"
+                                            placeholder="Availability" required [(ngModel)]="hkData.available"
+                                            #available="ngModel">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary my-2">Post Housekeeper</button>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

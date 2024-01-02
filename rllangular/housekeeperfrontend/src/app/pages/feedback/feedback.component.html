@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Post HouseKeeper</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <ul class="nav nav-tabs" id="myTabs">
+      <li class="nav-item">
+        <a class="nav-link " id="profile" data-toggle="tab" href="userprofile">Student Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="request" href="request">Request Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="assignedhk" href="assignedhk">Assigned Housekeeper</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="housekeeper" data-toggle="tab" href="hkdetails">Housekeeper details</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link active" id="feedback" href="feedback">Service Feedback</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="logout" href="">Logout</a>
+      </li>
+    </ul>
+    <div class="container">
+      <div class="col-md-12">
+        <h2 style="color: #343a40; text-align: center;">Feedback</h2>
+        <hr>
+        <section class="container my-2 w-50 text-dark bg-info p-2">
+          <form (ngSubmit)="onSubmit()" #feedbackForm="ngForm">
+            <div class="row">
+              <div class="col-md-10">
+                <label for="name">Full Name:</label>
+                <input type="text" class="form-control my-2 " id="name" placeholder="Enter your first name" required
+                  [(ngModel)]="name" name="name">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="roomno">Room Number:</label>
+                <input type="text" class="form-control my-2 " id="roomno" placeholder="Enter your room number" required
+                  [(ngModel)]="roomno" name="roomno">
+              </div>
+              <div class="col-md-6">
+                <label for="cleaningexp">Cleaning Feedback:</label>
+                <input type="text" class="form-control  my-2 " id="cleaningexp"
+                  placeholder="Give your Feedback regarding the cleaning experience" required [(ngModel)]="cleaningexp"
+                  name="cleaningexp">
+              </div>
+            </div>
+            <button type="submit" class="my-2 btn btn-primary">Submit</button>
+
+          </form>
+        </section>
+      </div>
+    </div>
+
+
+  </div>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</body>
+
+</html>

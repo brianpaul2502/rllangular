@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Housekeeper</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTabs">
+            <li class="nav-item">
+                <a class="nav-link " id="posthkdetails" data-toggle="tab" href="posthkdetails">Add Housekeeper</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="managehkdetails" data-toggle="tab" href="managehkdetails">Housekeeper
+                    Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="managerequest" href="managerequest">Requests</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="assignhktouser" href="assignhktouser">Assign Housekeeper</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="managefeedback" href="managefeedback">Feedback</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="logoutTab" href="">Logout</a>
+            </li>
+        </ul>
+
+
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="postJobSection">
+
+                <div class="search-bar my-2 ">
+                    <input type="text" placeholder="Search by Hostel" [(ngModel)]="searchQuery">
+                </div>
+                <button class="btn btn-outline-success me-2" (click)="filterDetails()">Search</button>
+                <button class="btn btn-outline-success me-2" (click)="sortDetails()">Sort by Availability</button>
+
+                <div class="container w-50 bg-warning">
+                    <h1>Housekeeper Details</h1>
+                    <div class="job-cards " *ngFor="let hk of hkData">
+                        <div class="job-card">
+                            <h4>
+                                <p><strong>Name:</strong> {{ hk.name }}</p>
+                            </h4>
+                            <p><strong>Hostel:</strong> {{ hk.hostel }}</p>
+                            <p><strong>Floor:</strong> {{ hk.floor }}</p>
+                            <p><strong>Rooms:</strong> {{ hk.rooms }}</p>
+                            <p><strong>Complaints:</strong> {{ hk.complaints }}</p>
+                            <p><strong>time:</strong> {{ hk.time }}</p>
+                            <p><strong>Available:</strong> {{ hk.available }}</p>
+                            <button class="btn btn-danger my-2" (click)="handleDelete(hk._id)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
