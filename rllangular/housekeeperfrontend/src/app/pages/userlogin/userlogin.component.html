@@ -11,21 +11,21 @@
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
       <div>
         <label for="email">Email:</label>
-        <input type="email" id="email" [(ngModel)]="email" name="email" required email />
-        <div *ngIf="loginForm.controls['email']?.hasError('required') && loginForm.submitted" class="error-message">
-          Email is required</div>
-        <div *ngIf="loginForm.controls['email']?.errors!['email'] && loginForm.submitted" class="error-message">Invalid
-          email format</div>
+        <input type="email" id="email" [(ngModel)]="email" name="email" required email #emailInput="ngModel"
+          [class.is-invalid]="emailInput.touched && emailInput.invalid" />
+        <div *ngIf="emailInput.touched && emailInput.hasError('required')" class="error-message">Email is required</div>
+        <div *ngIf="emailInput.touched && emailInput.hasError('email')" class="error-message">Invalid email format</div>
       </div>
       <div>
         <label for="password">Password:</label>
         <input type="password" id="password" [(ngModel)]="password" name="password" required minlength="4"
-          pattern="(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.\W)">
-        <div *ngIf="loginForm.controls['password']?.errors!['required'] && loginForm.submitted" class="error-message">
-          Password is required</div>
-        <div *ngIf="loginForm.controls['password']?.errors!['minlength'] && loginForm.submitted" class="error-message">
-          Password must be at least 4 characters long</div>
-        <div *ngIf="loginForm.controls['password']?.errors!['pattern'] && loginForm.submitted" class="error-message">
+          pattern="(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.\W)" #passwordInput="ngModel"
+          [class.is-invalid]="passwordInput.touched && passwordInput.invalid" />
+        <div *ngIf="passwordInput.touched && passwordInput.hasError('required')" class="error-message">Password is
+          required</div>
+        <div *ngIf="passwordInput.touched && passwordInput.hasError('minlength')" class="error-message">Password must be
+          at least 4 characters long</div>
+        <div *ngIf="passwordInput.touched && passwordInput.hasError('pattern')" class="error-message">
           Password must contain at least one digit, one lowercase letter, one uppercase letter, and one special
           character
         </div>

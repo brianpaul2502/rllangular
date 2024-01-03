@@ -30,6 +30,7 @@ export class UserloginComponent {
         },
         (error) => {
           console.error('Error during login:', error);
+          alert('Invalid credentials');
         }
       );
   }
